@@ -1,0 +1,36 @@
+<!--
+  ~ Copyright (c) Web Loupe. All rights reserved.
+  ~ This file is part of software that is released under a proprietary license.
+  ~ You must not copy, modify, distribute, make publicly available, or execute
+  ~ its contents or parts thereof without express permission by the copyright
+  ~ holder, unless otherwise permitted by law.
+  -->
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service class="WeloInvoicePhoneNumber\Components\Configuration" id="welo_invoice_phone_number.components.configuration">
+            <argument>%welo_invoice_phone_number.namespace%</argument>
+            <argument id="shopware.plugin.cached_config_reader" type="service"/>
+            <argument id="models" type="service"/>
+            <argument id="service_container" type="service"/>
+        </service>
+
+        <service class="WeloInvoicePhoneNumber\Subscriber\Template" id="welo_invoice_phone_number.subscriber.template">
+            <argument>%welo_invoice_phone_number.namespace%</argument>
+            <argument>%welo_invoice_phone_number.plugin_dir%</argument>
+            <argument type="service" id="template"/>
+            <tag name="shopware.event_subscriber"/>
+            <argument type="service" id="shopware.cache_manager"/>
+        </service>
+
+        <service class="WeloInvoicePhoneNumber\Subscriber\Document" id="welo_invoice_phone_number.subscriber.document">
+            <tag name="shopware.event_subscriber"/>
+            <argument type="service" id="models"/>
+            <argument type="service" id="welo_invoice_phone_number.components.configuration"/>
+        </service>
+
+    </services>
+</container>
