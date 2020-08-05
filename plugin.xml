@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) Web Loupe. All rights reserved.
+  ~ This file is part of software that is released under a proprietary license.
+  ~ You must not copy, modify, distribute, make publicly available, or execute
+  ~ its contents or parts thereof without express permission by the copyright
+  ~ holder, unless otherwise permitted by law.
+  -->
+
 <plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/plugin.xsd">
     <label>Phone number on the invoices</label>
     <label lang="de">Telefonnummer auf Rechnungen</label>
@@ -12,4 +20,55 @@
         <changes>First release Shopware Community Store</changes>
         <changes lang="de">Erstveröffentlichung Shopware Community Store</changes>
     </changelog>
+
+    <description>
+        <![CDATA[
+<h2>Description </h2>
+<p>
+With this plugin you can display the phone numbers of your customers on the invoices.
+<br><br>
+<h2>Settings</h2>
+<ul>
+    <li> Install the plugin </li>
+    <li> Empty the cache </li>
+    <li> Compile the theme </li>
+    <li> Reload the backend </li>
+    <li> Configure the plugin </li>
+</ul><br /><br />
+
+<h2>Questions about the product? </h2>
+
+For improvement suggestions or
+individual adjustments that can not be reproduced with the plugin
+Feel free to contact us via email at <a href="mailto:shopware@webloupe.de"> shopware@webloupe.de </a>!
+
+
+<p></p><br />
+</p>
+]]>
+    </description>
+    <description lang="de">
+        <![CDATA[
+  <h2>Beschreibung</h2>
+<p>
+Mit diesem Plugin können Sie die Telefonnummern Ihrer Kunden auf den Rechnungen anzeigen.
+<br><br>
+<h2>Konfiguration</h2>
+<ul>
+    <li> Plugin installieren </li>
+    <li> Cache leeren </li>
+    <li> Theme kompilieren </li>
+    <li> Backend neu laden </li>
+    <li> Plugin Konfigurieren </li>
+</ul><br />
+
+<h2>Fragen zum Produkt?</h2>
+Bei Verbesserungsvorschlägen oder
+individuellen Anpassungen die mit dem Plugin nicht abbildbar sind können
+Sie sich gerne an uns per Mail unter <a href="mailto:shopware@webloupe.de">shopware@webloupe.de</a> kontaktieren!
+
+<br />
+  </p>
+   ]]>
+    </description>
 </plugin>
