@@ -38,7 +38,7 @@ class WeloInvoicePhoneNumber extends Plugin
     /**
      * {@inheritdoc}
      */
-    public function uninstall(UninstallContext $context): void
+    public function uninstall(UninstallContext $context)
     {
         // Clear only cache when switching from active state to uninstall
         if ($context->getPlugin()->getActive()) {
