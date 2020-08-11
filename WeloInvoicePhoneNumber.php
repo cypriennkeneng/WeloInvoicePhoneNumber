@@ -10,6 +10,7 @@
 namespace WeloInvoicePhoneNumber;
 
 use Shopware\Components\Plugin;
+use Shopware\Components\Plugin\Context\ActivateContext;
 use Shopware\Components\Plugin\Context\UninstallContext;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -44,5 +45,14 @@ class WeloInvoicePhoneNumber extends Plugin
         if ($context->getPlugin()->getActive()) {
             $context->scheduleClearCache(UninstallContext::CACHE_LIST_ALL);
         }
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function activate(ActivateContext $context)
+    {
+        parent::activate($context);
+        $context->scheduleMessage('Please configure the plugin and compile the theme.');
     }
 }
