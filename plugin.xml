@@ -14,7 +14,7 @@
     <copyright>(c) by Web Loupe</copyright>
     <license>proprietary</license>
     <author>Web Loupe</author>
-    <compatibility minVersion="5.5.10" />
+    <compatibility minVersion="5.2.0" />
 
     <changelog version="1.0.0">
         <changes>First release Shopware Community Store</changes>
