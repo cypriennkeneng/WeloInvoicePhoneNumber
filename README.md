@@ -23,6 +23,10 @@
     German
     English
     
+### More plugins here
+
+    https://store.shopware.com/web-loupe.html
+        
 ### Questions about the product?
 
     For improvement suggestions or
