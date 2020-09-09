@@ -21,7 +21,7 @@
         <changes lang="de">Erstveröffentlichung Shopware Community Store</changes>
     </changelog>
 
-    <changelog version="1.0.0">
+    <changelog version="1.0.1">
         <changes>The phone number can also be displayed on the delivery notes</changes>
         <changes lang="de">Die Telefonnummer kann auch auf den Lieferscheinen angezeigt werden</changes>
     </changelog>
