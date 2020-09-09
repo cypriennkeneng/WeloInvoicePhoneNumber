@@ -17,6 +17,7 @@ use Shopware\Models\Plugin\Plugin;
 use Shopware_Components_Document;
 use Smarty_Data;
 use WeloInvoicePhoneNumber\Components\Configuration;
+use Shopware_Components_Config as Config;
 
 /**
  * Class Document
@@ -36,16 +37,25 @@ class Document implements SubscriberInterface
      * @var Configuration
      */
     private $configuration;
+    /**
+     * @var Config
+     */
+    private $config;
 
     /**
      * Document constructor.
      * @param ModelManager  $modelManager
      * @param Configuration $configuration
+     * @param Config        $config
      */
-    public function __construct(ModelManager $modelManager, Configuration $configuration)
-    {
+    public function __construct(
+        ModelManager $modelManager,
+        Configuration $configuration,
+        Config $config
+    ) {
         $this->modelManager = $modelManager;
         $this->configuration = $configuration;
+        $this->config = $config;
     }
 
     /**
@@ -81,7 +91,7 @@ class Document implements SubscriberInterface
 
         $weloPhoneNumber = [
             'wDocumentType' => $documentTypeId,
-            'isWeloEmailEnabled' => $this->isWeloEmailEnabled(),
+            'isWeloEmailEnabled' => $this->isWeloEmailEnabled($documentTypeId),
             'DisplayPhoneNumber' => $displayPhoneNumber,
         ];
 
@@ -104,9 +114,10 @@ class Document implements SubscriberInterface
 
     /**
      * Check if the other plugin is activated
+     * @param $documentTypeId
      * @return bool
      */
-    public function isWeloEmailEnabled()
+    public function isWeloEmailEnabled($documentTypeId)
     {
         $builder = $this->modelManager->createQueryBuilder();
         $builder->select('plugin')
@@ -117,6 +128,18 @@ class Document implements SubscriberInterface
             ->setParameter('plugin_active', true)
         ;
 
-        return $builder->getQuery()->getArrayResult() !== [] ? true : false;
+        $active = $builder->getQuery()->getArrayResult() !== [] ? true : false;
+
+        if (!$active) {
+            return false;
+        }
+
+        if (1 == $documentTypeId) {
+            return (bool)$this->config['DisplayEmail'];
+        } elseif (2 == $documentTypeId) {
+            return (bool)$this->config['DisplayEmailDeliveryNote'];
+        } else {
+            return false;
+        }
     }
 }

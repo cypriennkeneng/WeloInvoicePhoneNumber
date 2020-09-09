@@ -30,6 +30,7 @@
             <tag name="shopware.event_subscriber"/>
             <argument type="service" id="models"/>
             <argument type="service" id="welo_invoice_phone_number.components.configuration"/>
+            <argument type="service" id="config"/>
         </service>
 
     </services>
