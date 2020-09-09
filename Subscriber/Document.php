@@ -71,14 +71,18 @@ class Document implements SubscriberInterface
         /* @var Smarty_Data $view */
         $view = $document->_view;
 
-        if (1 != $documentTypeId || !(bool)$this->configuration->getPluginConfig('DisplayPhoneNumber')) {
+        if (1 == $documentTypeId) {
+            $displayPhoneNumber = (bool)$this->configuration->getPluginConfig('DisplayPhoneNumber');
+        } elseif (2 == $documentTypeId) {
+            $displayPhoneNumber = (bool)$this->configuration->getPluginConfig('DisplayPhoneNumberDeliveryNote');
+        } else {
             return;
         }
 
         $weloPhoneNumber = [
             'wDocumentType' => $documentTypeId,
             'isWeloEmailEnabled' => $this->isWeloEmailEnabled(),
-            'DisplayPhoneNumber' => $this->configuration->getPluginConfig('DisplayPhoneNumber'),
+            'DisplayPhoneNumber' => $displayPhoneNumber,
         ];
 
         $view->assign('weloPhoneNumber', $weloPhoneNumber);

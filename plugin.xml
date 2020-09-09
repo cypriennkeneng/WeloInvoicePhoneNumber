@@ -10,7 +10,7 @@
 <plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/plugin.xsd">
     <label>Phone number on the invoices</label>
     <label lang="de">Telefonnummer auf Rechnungen</label>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <copyright>(c) by Web Loupe</copyright>
     <license>proprietary</license>
     <author>Web Loupe</author>
@@ -21,11 +21,16 @@
         <changes lang="de">Erstveröffentlichung Shopware Community Store</changes>
     </changelog>
 
+    <changelog version="1.0.0">
+        <changes>The phone number can also be displayed on the delivery notes</changes>
+        <changes lang="de">Die Telefonnummer kann auch auf den Lieferscheinen angezeigt werden</changes>
+    </changelog>
+
     <description>
         <![CDATA[
 <h2>Description </h2>
 <p>
-With this plugin you can display the phone numbers of your customers on the invoices.<br>
+With this plugin you can display the phone numbers of your customers on the invoices and delivery notes.<br>
 The plugin can be activated / deactivated for every sub / language shop.
 <br><br>
 <h2>Settings</h2>
@@ -52,7 +57,7 @@ Feel free to contact us via email at <a href="mailto:shopware@webloupe.de"> shop
         <![CDATA[
   <h2>Beschreibung</h2>
 <p>
-Mit diesem Plugin können Sie die Telefonnummern Ihrer Kunden auf den Rechnungen anzeigen.<br>
+Mit diesem Plugin können Sie die Telefonnummern Ihrer Kunden auf den Rechnungen und Lieferscheinen anzeigen.<br>
 Das Plugin kann pro Sub- /Sprachshop aktiviert / deaktiviert werden.
 <br><br>
 <h2>Konfiguration</h2>

@@ -6,8 +6,15 @@
     <elements>
         <element required="true" type="boolean" scope="shop">
             <name>DisplayPhoneNumber</name>
-            <label lang="de">Telefonnummer anzeigen</label>
-            <label lang="en">Display phone number</label>
+            <label lang="de">Telefonnummer auf Rechnungen anzeigen</label>
+            <label lang="en">Display phone number on the invoices</label>
+            <value>1</value>
+        </element>
+
+        <element required="true" type="boolean" scope="shop">
+            <name>DisplayPhoneNumberDeliveryNote</name>
+            <label lang="de">Telefonnummer auf den Lieferscheinen anzeigen</label>
+            <label lang="en">Display phone number on the delivery notes</label>
             <value>1</value>
         </element>
     </elements>

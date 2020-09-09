@@ -1,7 +1,7 @@
 {extends file="parent:documents/index.tpl"}
 
 {block name="document_index_head_right"}
-    {if $weloPhoneNumber.DisplayPhoneNumber && $weloPhoneNumber.wDocumentType == 1 && $User.billing.phone}
+    {if $weloPhoneNumber.DisplayPhoneNumber && $User.billing.phone}
         {$Containers.Header_Box_Right.value}
         {s name="DocumentIndexCustomerID"}{/s} {$User.billing.customernumber|string_format:"%06d"}<br />
         {if $User.billing.ustid}
