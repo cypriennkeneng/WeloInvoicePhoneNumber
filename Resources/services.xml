@@ -11,6 +11,7 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
+        <defaults public="true" />
         <service class="WeloInvoicePhoneNumber\Components\Configuration" id="welo_invoice_phone_number.components.configuration">
             <argument>%welo_invoice_phone_number.namespace%</argument>
             <argument id="shopware.plugin.cached_config_reader" type="service"/>
